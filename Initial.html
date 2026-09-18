@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f5;
+            color: #18181b;
+        }
+
+        header {
+            background: #18181b;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+
+        .value {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .playlist {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .track {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #e4e4e7;
+        }
+
+        .track:last-child {
+            border-bottom: none;
+        }
+
+        button {
+            display: block;
+            margin: 25px auto 0;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .track {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Music Dashboard</h1>
+        <p>Your personal playlist overview</p>
+    </header>
+
+    <div class="container">
+        <div class="stats">
+            <div class="card">
+                <h2>Tracks</h2>
+                <div class="value">24</div>
+            </div>
+
+            <div class="card">
+                <h2>Minutes</h2>
+                <div class="value">96</div>
+            </div>
+
+            <div class="card">
+                <h2>Favorites</h2>
+                <div class="value">8</div>
+            </div>
+        </div>
+
+        <div class="playlist">
+            <h2>Recent Tracks</h2>
+
+            <div class="track">
+                <span>Midnight Drive</span>
+                <strong>4:12</strong>
+            </div>
+
+            <div class="track">
+                <span>Digital Dreams</span>
+                <strong>3:48</strong>
+            </div>
+
+            <div class="track">
+                <span>Ocean Lights</span>
+                <strong>5:21</strong>
+            </div>
+
+            <div class="track">
+                <span>Neon Streets</span>
+                <strong>4:05</strong>
+            </div>
+
+            <button onclick="showPlaylist()">Show Playlist Status</button>
+
+            <div id="message"></div>
+        </div>
+    </div>
+
+    <script>
+        function showPlaylist() {
+            const tracks = 24;
+            const favorites = 8;
+
+            document.getElementById("message").textContent =
+                `${favorites} of ${tracks} tracks are marked as favorites.`;
+        }
+    </script>
+</body>
+</html>
